@@ -47,21 +47,25 @@ RUN apt-get update -y && apt-get install -y \
     valgrind \
     wget \
     xz-utils \
-    zip \
-    python-rosinstall-generator \
-    python-wstool
+    zip
 
 # For Bugwright2
 RUN apt-get update -y && apt-get install -y \
-   libgflags-dev \
-   libgoogle-glog-dev \
-   libeigen3-dev \
-   liboctomap-dev \
-   libtf2-dev \
-   livopencv-dev \
-   libpcl-dev \
-   libcgal-dev \
-   gazebo9
+    ros-$ROS_VERSION-simulators \
+    ros-$ROS_VERSION-move-base-msgs \
+    libgflags-dev \
+    libgoogle-glog-dev \
+    libeigen3-dev \
+    liboctomap-dev \
+    libpcl-dev \
+    libopencv-dev \
+    libcgal-dev \
+    gazebo9 \
+    ros-$ROS_VERSION-mavros \
+    ros-$ROS_VERSION-mavros-extras \
+    ros-$ROS_VERSION-joy \
+    ros-$ROS_VERSION-pcl-conversions \
+    ros-$ROS_VERSION-pcl-ros
 
 # Initialize ROS.
 RUN rosdep init
